@@ -5,10 +5,10 @@ I=V(T)/ R(T)
 */
 
 int main(){
-    float I, V, R, P;
+    float I, V, R, P, Rt;
     char option;
 
-    printf(" What do you want to find?\n1, Power, \n2, Currenty,\n3, Power dissipated,\n ");
+    printf(" What do you want to find?\n1, Power, \n2, Currenty,\n3, Power dissipated,\n4, Voltage Drop,\n ");
     scanf("%c" , &option);
     switch(option)
 {
@@ -42,10 +42,20 @@ int main(){
 
             printf("%.2f * %.2f * %.2f = %.2f mW", I , I , R , I*I * R  );
             break;
+
+        case '4'://Find the Voltage drop for each resistor [V(Rn) = (Rn/ Rt) * Vt
+           printf("What is the Restance Total?");
+           scanf("%f", &Rt);
+
+           printf("What is the Restance of the resistor?");
+           scanf("%f", &R);
+
+           printf("What is the Voltage total?");
+           scanf("%f", &V);
+
+           printf("(%.2f / %.2f) * %.2f = %.2f V", R, Rt, V, (R / Rt) * V);
+           break;
         }
-  /*
-   // P = I * V;
-   //I = V(t) / R(t);
-*/
+
     return 0;
     }
